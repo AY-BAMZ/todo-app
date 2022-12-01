@@ -8,6 +8,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import Notification from "../screens/Notification/Notification";
 import Profile from "../screens/Profile/Profile";
 import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -56,6 +57,17 @@ export default function Tabs() {
             ),
           }}
           component={Schedule}
+        />
+        <Tab.Screen
+          name="Add"
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="md-add-sharp" size={28} color={color} />
+            ),
+            tabBarActiveTintColor: "red",
+          tabBarInactiveTintColor: "#BBBBBB",
+          }}
+          component={Notification}
         />
         <Tab.Screen
           name="Notifications"

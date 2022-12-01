@@ -4,7 +4,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FAB, Portal, Provider } from 'react-native-paper';
 
-export default function CreateTodo() {
+export default function CreateTodo({setOpenModal}) {
   const [state, setState] = React.useState({ open: false });
 
   const onStateChange = ({ open }) => setState({ open });
@@ -17,11 +17,15 @@ export default function CreateTodo() {
         <FAB.Group
           open={open}
           visible
-          icon={open ? 'calendar-today' : 'plus'}
+          icon={open ? 'close' : 'plus'}
           actions={[
-            { icon: 'plus', onPress: () => console.log('Pressed add') },
+            { icon: 'plus', onPress: () => setOpenModal(true) },
             
           ]}
+          // color='red'
+          fabStyle={{backgroundColor: "red"}}
+          color="#fff"
+          style={styles.addButton}
           onStateChange={onStateChange}
           onPress={() => {
             if (open) {
@@ -36,14 +40,7 @@ export default function CreateTodo() {
 
 const styles = StyleSheet.create({
   
-  // addButton: {
-  //   backgroundColor: "#F23859",
-  //   color: "#fff",
-  //   padding: 16,
-  //   borderRadius: 50,
-  //   // position: "relative",
-  //   width: 50,
-  //   justifyContent: "center",
-  //   zIndex: 600,
-  // },
+  addButton: {
+    color: 'red'
+  },
 });

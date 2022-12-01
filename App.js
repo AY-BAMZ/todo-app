@@ -5,6 +5,12 @@ import AppLoading from "expo-app-loading";
 import { StyleSheet, Text, View } from 'react-native';
 import Tabs from './routes/Tabs';
 import { Provider as PaperProvider } from 'react-native-paper';
+import {
+  en,
+  registerTranslation,
+} from 'react-native-paper-dates'
+
+registerTranslation('en-GB', en)
 
 const getFonts = () =>
   Font.loadAsync({

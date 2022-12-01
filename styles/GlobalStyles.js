@@ -47,15 +47,14 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: "#f2f2f2"
     },
     input: {
-        marginHorizontal: 20,
         padding: 12,
         fontSize: 18,
-        borderWidth: 1,
+        borderWidth: 0,
+        borderBottomWidth: 1,
         borderColor: "#ccc",
         marginVertical: 10,
         paddingVertical: 16,
         borderRadius: 8,
-        // minHeight: 50
     },
     button: {
         marginVertical: 10,
